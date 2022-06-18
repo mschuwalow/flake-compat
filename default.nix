@@ -188,6 +188,8 @@ let
 
 in
   rec {
+    inherit result;
+
     defaultNix =
       result
       // (if result ? defaultPackage.${system} then { default = result.defaultPackage.${system}; } else {})
